@@ -23,6 +23,6 @@ Route::get('/csrf-token', function() {
 });
 
 Route::prefix('company')->controller(UserController::class)->group(function() {
-    Route::post('register','register');
+    Route::post('register','register')->middleware('web');;
     Route::post('login','login');
 });
